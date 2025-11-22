@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор детских книг</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Генератор детских книг</h1>
+            <p class="subtitle">Создайте уникальную детскую книгу по вашему запросу!</p>
+        </header>
+
+       <main>
+        <div class="search-section">
+            <form id="bookForm">
+                <div class="input-group">
+                    <label for="query">О чем будет ваша книга?</label>
+                    <input 
+                        type="text" 
+                        id="query" 
+                        name="query" 
+                        placeholder="Например: история о драконе, приключения в лесу, сказка о принцессе..."
+                        required
+                    >
+                </div>
+                <div class="input-group">
+                    <label for="numPages">Количество страниц:</label>
+                    <select id="numPages" name="numPages" class="num-pages-select">
+                        <option value="6">6 страниц</option>
+                        <option value="8">8 страниц</option>
+                        <option value="10" selected>10 страниц</option>
+                        <option value="12">12 страниц</option>
+                        <option value="15">15 страниц</option>
+                    </select>
+                </div>
+                <button type="submit" id="generateBtn" class="btn-primary">
+                    <span class="btn-text">✨ Создать книгу</span>
+                    <span class="btn-loader" style="display: none;">⏳ Создаю...</span>
+                </button>
+            </form>
+        </div>
+
+        <div id="bookContainer" class="book-container" style="display: none;">
+            <div class="book-header">
+                <h2 id="bookTitle"></h2>
+            </div>
+            <div id="bookPages" class="book-pages"></div>
+            
+            <div class="download-buttons">
+                <button id="downloadPdf" class="btn-download">
+                    📥 Скачать PDF
+                </button>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </main>
+
+    <footer>
+        <p>Создано с ❤️ для детей</p>
+    </footer>
+</div>
+
+<script src="script.js"></script> </body>
+</html>
